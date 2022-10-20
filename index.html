@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="icon" type="image/x-icon" href="mak_logoo.JPG" />
+    <link rel="stylesheet" href="css.css" />
+  </head>
+
+  <body>
+    <h1>Controlling background Color</h1>
+    
+    <label for="points">0</label>
+    <input
+      type="range"
+      id="myRange1"
+      name="points"
+      min="0"
+      max="255"
+      step="1"
+      value="0"
+    />
+    <span>255 Value = </span>
+    <span id="r" style="font-weight: bold; color: red">28</span>
+    <br />
+
+    <label for="points">0</label>
+    <input
+      type="range"
+      id="myRange2"
+      name="points"
+      min="0"
+      max="255"
+      step="1"
+      value="0"
+    />
+    <span>255 Value = </span>
+    <span id="g" style="font-weight: bold; color: green">28</span>
+    <br />
+
+    <label for="points">0</label>
+    <input
+      type="range"
+      id="myRange3"
+      name="points"
+      min="0"
+      max="255"
+      step="1"
+      value="0"
+    />
+    <span>255 Value = </span>
+    <span id="b" style="font-weight: bold; color: blue">28</span>
+
+    
+    <h2>Select your color<span id="colorOutput"></span></h2>
+
+    <div id="controlledDiv"></div>
+
+
+    <script>
+      var slideCol1 = document.getElementById("myRange1");
+      var slideCol2 = document.getElementById("myRange2");
+      var slideCol3 = document.getElementById("myRange3");
+      var r = document.getElementById("r");
+      var g = document.getElementById("g");
+      var b = document.getElementById("b");
+      r.innerHTML = slideCol1.value;
+      g.innerHTML = slideCol2.value;
+      b.innerHTML = slideCol3.value;
+
+      slideCol1.oninput = function () {
+        r.innerHTML = this.value;
+      };
+      slideCol2.oninput = function () {
+        g.innerHTML = this.value;
+      };
+      slideCol3.oninput = function () {
+        b.innerHTML = this.value;
+        
+      };
+
+
+
+      function changeColor(){
+        let red = document.getElementById('myRange1').value;
+        let green = document.getElementById('myRange2').value;
+        let blue = document.getElementById('myRange3').value;
+
+        let color = 'rgb('+ red + ',' + green + ',' + blue + ')';
+        document.getElementById("controlledDiv").style.backgroundColor =color;
+        document.getElementById('colorOutput').innerHTML = ': '+ color;
+      }
+      document.getElementById('myRange1').addEventListener('input',changeColor);
+      document.getElementById('myRange2').addEventListener('input',changeColor);
+      document.getElementById('myRange3').addEventListener('input',changeColor);
+
+
+    </script>
+
+    </div>
+  </body>
+</html>
