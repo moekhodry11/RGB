@@ -1,2 +1,2 @@
 # RGB
-Controlling a RGB LED using web page
+https://moekhodry11.github.io/RGB/
